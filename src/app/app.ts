@@ -10,33 +10,53 @@ import { ProfileComponent } from "./profile/profile.component";
 })
 export class App {
   
-  // count=0
+//   count=0
   
 
-  // handleCounter(val:string){
-  //   if(val=='minus'){
-  //     this.count=this.count-1
-  //     if(this.count==-1){
-  //       this.count=0
-  //     }
-  //   }
-  //   else if(val=='plus'){
-  //     this.count=this.count+1
-  //   }
-  //   else{
-  //     this.count=0
-  //   }
-  // }
+//   handleCounter(val:string){
+//     if(val=='minus'){
+//       this.count=this.count-1
+//       if(this.count==-1){
+//         this.count=0
+//       }
+//     }
+//     else if(val=='plus'){
+//       this.count=this.count+1
+//     }
+//     else{
+//       this.count=0
+//     }
+//   }
 
-  // handleEvent(event:MouseEvent){
-  //   console.log("function called",event.type);
-  //    console.log("function called",(event.target as Element).className);
+//   handleEvent(event:MouseEvent){
+//     console.log("function called",event.type);
+//      console.log("function called",(event.target as Element).className);
     
-  // }
-//   event type
-//   handleEvent(event: Event) {
+//   }
+
+//   handleEvent2(event: Event) {
 //   const input = event.target as HTMLInputElement;
 //   console.log(`Event type: ${event.type}, Value: ${input.value}`);
 // }
-
+name=""
+displayName="";
+email="";
+getName(event:Event){
+  const name=(event.target as HTMLInputElement).value
+  this.name=name;
+}
+showName(){
+  this.displayName=this.name;
+}
+setName(){
+  this.name="Tanishq";
+}
+getEmail(val:string){
+  console.log(val);
+  this.email=val
+}
+setEmail(val:string){
+  console.log(val);
+  this.email="default@test.com"
+}
 }

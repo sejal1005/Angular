@@ -9,7 +9,19 @@
         <button (click)="handleCounter('Reset')" class="btn bg-black">Reset</button>
         <button (click)="handleCounter('plus')" class="btn bg-green ">Increment</button>
     </div>
-</div> -->
-<!-- <h1>Event in Angular</h1>
+</div> 
+<h1>Event in Angular</h1>
 <button class="btn" name="login" (click)="handleEvent($event)">Click Event</button>
-<input (focus)="handleEvent($event)" (blur)="handleEvent($event)" /> -->
+<input (focus)="handleEvent2($event)" (blur)="handleEvent2($event)" /> -->
+<h1>Get and Set Input field Value</h1>
+<h1>User name:{{displayName}}</h1>
+<input type="text" value="{{name}}" (input)="getName($event)" placeholder="Enter User Name">
+<br>
+<br>
+<button (click)="showName()">Get Name</button>
+<button (click)="setName()">Set Name</button>
+<hr>
+<h1>User Email:{{email}}</h1>
+<input type="text" value="{{email}}" placeholder="enter email" #emailField>
+<button (click)="getEmail(emailField.value)">Get Email</button>
+<button (click)="setEmail(emailField.value)">Set Email</button>
