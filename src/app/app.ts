@@ -1,4 +1,4 @@
-import { Component, effect, signal} from '@angular/core';
+import { Component, computed, effect, Signal, signal, WritableSignal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 
@@ -71,7 +71,7 @@ export class App {
 // }
 // updateValue(val:string){
   // this.count.set(this.count()+1);
-
+// COUNTER APPLICATION
   // if(val=='inc'){
   //   this.count.set(this.count()+1);
   // }
@@ -79,8 +79,43 @@ export class App {
   //   this.count.set(this.count()-1);
   // }
 // }
+// Defining two data types for signal
+// data : WritableSignal<number | string>= signal<number | string>(10);
+//data : WritableSignal<number>= signal<number>(10);
+// these cannot be updated
+// count : Signal<number> = computed(()=>20);
 
+// updateSignal(){
+//   this.data.set("Hello");
+//   using update method 
+// this.data.update((val)=>val+1)
+
+// }
+// COMPUTED SIGNALS
+// x = signal(10);
+// y = signal(20);
+// z = computed (()=> this.x() + this.y())
+
+// showValue(){
+//   console.log(this.z());
+//   this.x.set(100)
+//   console.log(this.z());
+// }
 
  
+//Effect 
+userName = signal('Sejal')
+count = signal(0)
+displayHeading = true
 
+constructor(){
+  effect(()=>{
+    console.log(this.userName());
+  })
+}
+
+toggleValue(){
+ // this.displayHeading = !this.displayHeading
+ this.count.set(this.count()+1)
+}
 }
