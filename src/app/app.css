@@ -1,4 +1,4 @@
-counter app
+/* counter app
 .btn{
  width: 80px;
  height: 80px;
@@ -28,4 +28,9 @@ counter app
     border-radius: 10px;
     margin: auto;
     margin-bottom: 30px;
+} */
+ .task-List {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
 }

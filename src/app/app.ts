@@ -1,10 +1,11 @@
 import { Component, computed, effect, Signal, signal, WritableSignal} from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -104,18 +105,31 @@ export class App {
 
  
 //Effect 
-userName = signal('Sejal')
-count = signal(0)
-displayHeading = true
+// userName = signal('Sejal')
+// count = signal(0)
+// displayHeading = true
 
-constructor(){
-  effect(()=>{
-    console.log(this.userName());
-  })
+// constructor(){
+//   effect(()=>{
+//     console.log(this.userName());
+//   })
+// }
+
+// toggleValue(){
+//  // this.displayHeading = !this.displayHeading
+//  this.count.set(this.count()+1)
+// }
+
+// TO DO LIST 
+task = "";
+taskList :{id:number,task:string}[]=[] 
+
+addTask(){
+  this.taskList.push({id:this.taskList.length+1, task:this.task})
+  this.task=''
+  console.log(this.taskList);
 }
-
-toggleValue(){
- // this.displayHeading = !this.displayHeading
- this.count.set(this.count()+1)
+deleteTask(taskId: number){
+  this.taskList=this.taskList.filter((item)=>item.id!=taskId)
 }
 }

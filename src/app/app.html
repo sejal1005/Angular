@@ -49,11 +49,22 @@
  <h1>Signal</h1>
  <button (click)="showValue()">show value</button> -->
 
-<h1>Computed Signals</h1>
+<!-- <h1>Computed Signals</h1>
 <h1>{{userName()}}</h1>
-<!-- <button (click)="userName.set('sam')">show value</button> -->
+ <button (click)="userName.set('sam')">show value</button> 
  <button (click)="toggleValue()">show value</button>
 
 @if(displayHeading){
     <h1 style="background-color: green;">Page Heading</h1>
+} -->
+
+<h1>To Do List</h1>
+<input type="text" [(ngModel)]="task" placeholder="Enter New Task">
+<button (click)="addTask()">Add Task</button>
+@for(task of taskList;track task.id){
+    <ul class="task-List">
+        <li>{{task.id}}</li>
+        <li>{{task.task}}</li>
+        <li><button (click)="deleteTask(task.id)">Delete</button></li>
+    </ul>
 }
