@@ -29,8 +29,11 @@
     margin: auto;
     margin-bottom: 30px;
 } */
- .task-List {
+ /* .task-List {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-}
+} */
+ .error{
+    color: red;
+ }
