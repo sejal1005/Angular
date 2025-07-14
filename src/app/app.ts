@@ -1,6 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component, computed, effect, Signal, signal, WritableSignal} from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
 
@@ -141,22 +141,27 @@ export class App {
 // }
 
 //*** FORM GROUPING ***
-profileForm = new FormGroup({
-  name: new FormControl('',[Validators.required]),
-  password: new FormControl('',[Validators.required,Validators.minLength(5)]),
-  email: new FormControl('', [Validators.required,Validators.maxLength(20),Validators.pattern('[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}')])
+// profileForm = new FormGroup({
+//   name: new FormControl('',[Validators.required]),
+//   password: new FormControl('',[Validators.required,Validators.minLength(5)]),
+//   email: new FormControl('', [Validators.required,Validators.maxLength(20),Validators.pattern('[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}')])
 
-})
-onSubmit(){
-  console.log(this.profileForm.value);
-}
-get name(){
-  return this.profileForm.get('name');
-}
-get email(){
-  return this.profileForm.get('email');
-}
-get password(){
-  return this.profileForm.get('password');
-}
+// })
+// onSubmit(){
+//   console.log(this.profileForm.value);
+// }
+// get name(){
+//   return this.profileForm.get('name');
+// }
+// get email(){
+//   return this.profileForm.get('email');
+// }
+// get password(){
+//   return this.profileForm.get('password');
+// }
+// userDetails:any;
+// addDetails(val:NgForm){
+//   console.log(val);
+//   this.userDetails=val;
+// }
 }
